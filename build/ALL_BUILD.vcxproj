@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x86</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|win32">
+      <Configuration>Debug</Configuration>
+      <Platform>win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|win32">
+      <Configuration>Release</Configuration>
+      <Platform>win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A5B52A4D-574C-3257-8CDC-4BE2C6540C47}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Building Custom Rule C:/Users/CEDRICK/Documents/Apuntes y tareas/Proyectos/OpenGL/glfw-3.3.9/glfw-3.3.9/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/CEDRICK/Documents/Apuntes y tareas/Proyectos/OpenGL/glfw-3.3.9/glfw-3.3.9" "-BC:/Users/CEDRICK/Documents/Apuntes y tareas/Proyectos/OpenGL/glfw-3.3.9/build" --check-stamp-file "C:/Users/CEDRICK/Documents/Apuntes y tareas/Proyectos/OpenGL/glfw-3.3.9/build/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Program Files\CMake\share\cmake-3.28\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FindDoxygen.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\CMakeFiles\3.28.3\CMakeCCompiler.cmake;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\CMakeFiles\3.28.3\CMakeRCCompiler.cmake;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\CMakeFiles\3.28.3\CMakeSystem.cmake;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\cmake_uninstall.cmake.in;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\src\glfw3.pc.in;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\src\glfw3Config.cmake.in;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Building Custom Rule C:/Users/CEDRICK/Documents/Apuntes y tareas/Proyectos/OpenGL/glfw-3.3.9/glfw-3.3.9/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/CEDRICK/Documents/Apuntes y tareas/Proyectos/OpenGL/glfw-3.3.9/glfw-3.3.9" "-BC:/Users/CEDRICK/Documents/Apuntes y tareas/Proyectos/OpenGL/glfw-3.3.9/build" --check-stamp-file "C:/Users/CEDRICK/Documents/Apuntes y tareas/Proyectos/OpenGL/glfw-3.3.9/build/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Program Files\CMake\share\cmake-3.28\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FindDoxygen.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\CMakeFiles\3.28.3\CMakeCCompiler.cmake;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\CMakeFiles\3.28.3\CMakeRCCompiler.cmake;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\CMakeFiles\3.28.3\CMakeSystem.cmake;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\cmake_uninstall.cmake.in;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\src\glfw3.pc.in;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\src\glfw3Config.cmake.in;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">Building Custom Rule C:/Users/CEDRICK/Documents/Apuntes y tareas/Proyectos/OpenGL/glfw-3.3.9/glfw-3.3.9/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/CEDRICK/Documents/Apuntes y tareas/Proyectos/OpenGL/glfw-3.3.9/glfw-3.3.9" "-BC:/Users/CEDRICK/Documents/Apuntes y tareas/Proyectos/OpenGL/glfw-3.3.9/build" --check-stamp-file "C:/Users/CEDRICK/Documents/Apuntes y tareas/Proyectos/OpenGL/glfw-3.3.9/build/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">C:\Program Files\CMake\share\cmake-3.28\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FindDoxygen.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\CMakeFiles\3.28.3\CMakeCCompiler.cmake;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\CMakeFiles\3.28.3\CMakeRCCompiler.cmake;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\CMakeFiles\3.28.3\CMakeSystem.cmake;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\cmake_uninstall.cmake.in;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\src\glfw3.pc.in;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\src\glfw3Config.cmake.in;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">Building Custom Rule C:/Users/CEDRICK/Documents/Apuntes y tareas/Proyectos/OpenGL/glfw-3.3.9/glfw-3.3.9/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/CEDRICK/Documents/Apuntes y tareas/Proyectos/OpenGL/glfw-3.3.9/glfw-3.3.9" "-BC:/Users/CEDRICK/Documents/Apuntes y tareas/Proyectos/OpenGL/glfw-3.3.9/build" --check-stamp-file "C:/Users/CEDRICK/Documents/Apuntes y tareas/Proyectos/OpenGL/glfw-3.3.9/build/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">C:\Program Files\CMake\share\cmake-3.28\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FindDoxygen.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\CMakeFiles\3.28.3\CMakeCCompiler.cmake;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\CMakeFiles\3.28.3\CMakeRCCompiler.cmake;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\CMakeFiles\3.28.3\CMakeSystem.cmake;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\cmake_uninstall.cmake.in;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\src\glfw3.pc.in;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\src\glfw3Config.cmake.in;C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\ZERO_CHECK.vcxproj">
+      <Project>{682684D5-926A-311D-BE7A-DB32383C3F16}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\tests\Z_Linea.vcxproj">
+      <Project>{B89F63A2-55AE-3726-AA70-4BE121EF158F}</Project>
+      <Name>Z_Linea</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\examples\boing.vcxproj">
+      <Project>{8F764875-637F-3F4E-A4B0-26F5ACD867B2}</Project>
+      <Name>boing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\tests\clipboard.vcxproj">
+      <Project>{8788F9DF-66BE-3F37-8104-4F46F75F658F}</Project>
+      <Name>clipboard</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\tests\cursor.vcxproj">
+      <Project>{74B6D392-00F2-39FD-AA09-6770DF22063F}</Project>
+      <Name>cursor</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\tests\empty.vcxproj">
+      <Project>{0E4866AE-FAD6-327A-AF24-B07729A86915}</Project>
+      <Name>empty</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\tests\events.vcxproj">
+      <Project>{B6B5F2F4-BC35-3928-B57F-000015E52192}</Project>
+      <Name>events</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\tests\gamma.vcxproj">
+      <Project>{DFE5EB44-91C7-307C-A2CF-63AB6F83A623}</Project>
+      <Name>gamma</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\examples\gears.vcxproj">
+      <Project>{13664757-B55D-34D1-BDC1-B22D7D537BA8}</Project>
+      <Name>gears</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\src\glfw.vcxproj">
+      <Project>{9AEFEE22-EDE1-3C8C-A543-8870C6A7C78B}</Project>
+      <Name>glfw</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\tests\glfwinfo.vcxproj">
+      <Project>{2C22AA2A-FBF6-35AC-8F5F-231973D4C404}</Project>
+      <Name>glfwinfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\examples\heightmap.vcxproj">
+      <Project>{32E720FB-99C8-30CC-AC94-4834CEB3F12B}</Project>
+      <Name>heightmap</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\tests\icon.vcxproj">
+      <Project>{DEAA49CD-450E-3AB8-87F2-67058B9BE785}</Project>
+      <Name>icon</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\tests\iconify.vcxproj">
+      <Project>{B050C880-E449-34F2-9B09-0E05F42D547B}</Project>
+      <Name>iconify</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\tests\inputlag.vcxproj">
+      <Project>{41D65868-595E-3224-B92D-1D6FE3DE7B97}</Project>
+      <Name>inputlag</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\tests\joysticks.vcxproj">
+      <Project>{393D4263-6F4D-3012-8617-3C762D0CC614}</Project>
+      <Name>joysticks</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\tests\monitors.vcxproj">
+      <Project>{620531A4-8B43-35E2-92DC-A2C77D6490B1}</Project>
+      <Name>monitors</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\tests\msaa.vcxproj">
+      <Project>{0B3B71A4-C05E-30B5-AF55-5DDB47CD65C6}</Project>
+      <Name>msaa</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\examples\offscreen.vcxproj">
+      <Project>{B4E0947C-D2B1-3AAD-B442-C5CA14D207BD}</Project>
+      <Name>offscreen</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\tests\opacity.vcxproj">
+      <Project>{031B8ED5-5E2C-33C7-BD39-303609100C59}</Project>
+      <Name>opacity</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\examples\particles.vcxproj">
+      <Project>{EE5DC5FB-D105-3034-9C6C-85618ED2FBD1}</Project>
+      <Name>particles</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\tests\reopen.vcxproj">
+      <Project>{3A8BBAC2-FC60-38EE-BEFD-7DAD82ECD4AE}</Project>
+      <Name>reopen</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\examples\sharing.vcxproj">
+      <Project>{EEFEC596-71B7-3AFA-A51C-BD79EA1C52BE}</Project>
+      <Name>sharing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\examples\simple.vcxproj">
+      <Project>{C77C4BE0-BBE5-3B27-A87D-0B5D2E37A7E3}</Project>
+      <Name>simple</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\examples\splitview.vcxproj">
+      <Project>{41C2A8FE-E48B-3342-80A6-B72BC4E35637}</Project>
+      <Name>splitview</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\tests\tearing.vcxproj">
+      <Project>{49C190AA-568C-3D17-959E-B40F8E4F9EC8}</Project>
+      <Name>tearing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\tests\threads.vcxproj">
+      <Project>{CF4D14AC-B38D-3712-AEEB-C39108C23EBF}</Project>
+      <Name>threads</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\tests\timeout.vcxproj">
+      <Project>{5FF79288-BDCB-3324-9373-F946F6EB5660}</Project>
+      <Name>timeout</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\tests\title.vcxproj">
+      <Project>{EED0F722-B4C8-3054-8EA4-A9A9AF6DBB56}</Project>
+      <Name>title</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\tests\triangle-vulkan.vcxproj">
+      <Project>{D9C8AAAC-3A3C-371F-B113-BE3250DC65CD}</Project>
+      <Name>triangle-vulkan</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\examples\wave.vcxproj">
+      <Project>{3A696111-475E-3BF5-93CF-A7DC173963CB}</Project>
+      <Name>wave</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\tests\windows.vcxproj">
+      <Project>{C2F05659-C374-32FD-AEE4-45A7F85DE465}</Project>
+      <Name>windows</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

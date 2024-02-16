@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\CMakeFiles\c9e98ef0c1d0f3ebf93cbae02b8e80fd\update_mappings.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\src\mappings.h.in">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\CMake\GenerateMappings.cmake" />
+    <None Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\build\src\CMakeFiles\update_mappings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{19BE4379-2DF3-3536-8689-8895B4A5B746}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{561E65AE-7A67-346E-AD27-182B6AD2F5F9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
