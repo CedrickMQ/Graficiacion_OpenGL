@@ -8,9 +8,23 @@ void drawPixel() {
 
     glBegin(GL_POINTS);
     glVertex2f(0.5f, 0.5f);
+    glVertex2f(-0.5f, -0.5f);
     glEnd();
 }
 
+void drawPixelLine(){
+    glColor3f(1.0f, 1.0f, 1.0f);
+
+    glBegin(GL_POINTS);
+
+    for (float x = -0.5f; x <= 0.5; x )
+    {
+        glVertex2f(x,x);
+        x = x + 0.001f;
+    }
+    glEnd();
+    
+}
 
 void drawLine() {
     // Establecer el color de la línea (en este caso, rojo)
@@ -46,8 +60,9 @@ int main(void) {
         glClear(GL_COLOR_BUFFER_BIT);
         glFlush();
 
-        drawLine(); // Llamar a la función para dibujar la línea
-        drawPixel();
+        //drawLine(); // Llamar a la función para dibujar la línea
+        //drawPixel();
+        drawPixelLine();
 
         glfwSwapBuffers(window);
         glfwPollEvents();
