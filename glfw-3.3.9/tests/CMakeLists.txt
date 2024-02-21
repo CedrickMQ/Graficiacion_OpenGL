@@ -54,7 +54,7 @@ add_executable(title WIN32 MACOSX_BUNDLE title.c ${GLAD_GL})
 add_executable(triangle-vulkan WIN32 triangle-vulkan.c ${GLAD_VULKAN})
 add_executable(windows WIN32 MACOSX_BUNDLE windows.c ${GETOPT} ${GLAD_GL})
 
-add_executable(Z_Linea WIN32 Z_Linea.c ${GLAD_GL})
+add_executable(Z_Linea WIN32 Z_Linea.c ${GETOPT} ${GLAD_GL})
 
 
 target_link_libraries(empty "${CMAKE_THREAD_LIBS_INIT}")

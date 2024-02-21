@@ -4,11 +4,17 @@
     <ClCompile Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\tests\Z_Linea.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\deps\getopt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\deps\glad_gl.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\deps\getopt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="C:\Users\CEDRICK\Documents\Apuntes y tareas\Proyectos\OpenGL\glfw-3.3.9\glfw-3.3.9\deps\glad\gl.h">
       <Filter>Header Files</Filter>
     </ClInclude>

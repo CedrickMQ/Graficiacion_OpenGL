@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "tests/Release/Z_Linea.exe"
+			"path" : "tests/MinSizeRel/Z_Linea.exe"
 		},
 		{
-			"path" : "tests/Release/Z_Linea.pdb"
+			"path" : "tests/MinSizeRel/Z_Linea.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -52,7 +52,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /O2 /Ob2 /DNDEBUG -MD"
+					"fragment" : "/DWIN32 /D_WINDOWS /O1 /Ob1 /DNDEBUG -MD"
 				}
 			],
 			"defines" : 
@@ -85,7 +85,8 @@
 			"sourceIndexes" : 
 			[
 				0,
-				2
+				2,
+				4
 			]
 		}
 	],
@@ -109,7 +110,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /O2 /Ob2 /DNDEBUG -MD",
+				"fragment" : "/DWIN32 /D_WINDOWS /O1 /Ob1 /DNDEBUG -MD",
 				"role" : "flags"
 			},
 			{
@@ -118,7 +119,7 @@
 			},
 			{
 				"backtrace" : 1,
-				"fragment" : "..\\src\\Release\\glfw3.lib",
+				"fragment" : "..\\src\\MinSizeRel\\glfw3.lib",
 				"role" : "libraries"
 			},
 			{
@@ -142,14 +143,16 @@
 			"sourceIndexes" : 
 			[
 				0,
-				2
+				2,
+				4
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				1
+				1,
+				3
 			]
 		}
 	],
@@ -159,6 +162,17 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "tests/Z_Linea.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "deps/getopt.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "deps/getopt.c",
 			"sourceGroupIndex" : 0
 		},
 		{
