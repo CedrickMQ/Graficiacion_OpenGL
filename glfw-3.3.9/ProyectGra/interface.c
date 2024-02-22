@@ -1,29 +1,24 @@
 #include <glad/gl.h>
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
-#include <stdio.h>
 
-// Elementos para la interface
 #define NK_IMPLEMENTATION
 #define NK_INCLUDE_FIXED_TYPES
+#define NK_INCLUDE_FONT_BAKING
+#define NK_INCLUDE_DEFAULT_FONT
 #define NK_INCLUDE_DEFAULT_ALLOCATOR
+#define NK_INCLUDE_VERTEX_BUFFER_OUTPUT
+#define NK_INCLUDE_STANDARD_VARARGS
 #include <nuklear.h>
+
+#define NK_GLFW_GL2_IMPLEMENTATION
 #include <nuklear_glfw_gl2.h>
 
-#define max_vertex_memory 512 * 1024
-#define MAX_ELEMENT_MEMORY 128 * 1024
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 float x1, x2, y1, y2;
-
-void drawPixel() {
-    glColor3f(1.0f, 1.0f, 1.0f);
-    glBegin(GL_POINTS);
-
-    glVertex2f(0.5f, 0.5f);
-    glVertex2f(0, 0);
-    
-    glEnd();
-}
 
 void drawPixelLine(float x1, float y1, float x2, float y2){
     glColor3f(1.0f, 1.0f, 1.0f);
@@ -66,7 +61,7 @@ void drawPixelLine(float x1, float y1, float x2, float y2){
 
     float avR = 2 * dy;
     float av = avR - dx;
-    float avI = av - dx; 
+    float avI = av - dx;
 
     for(;((x <= x2) && (y <= y2));)
     {
@@ -85,6 +80,7 @@ void drawPixelLine(float x1, float y1, float x2, float y2){
     }
 
     glEnd();
+
 }
 
 void drawLine(float x1, float y1, float x2, float y2) {
@@ -98,59 +94,112 @@ void drawLine(float x1, float y1, float x2, float y2) {
     glEnd();
 }
 
-int main(void) {
+void error_callback(int error, const char* description)
+{
+    fprintf(stderr, "Error: %s\n", description);
+}
+
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+    if (action != GLFW_PRESS)
+        return;
+
+    switch (key)
+    {
+        case GLFW_KEY_ESCAPE:
+            glfwSetWindowShouldClose(window, 1);
+            break;
+    }
+}
+
+int main(int argc, char** argv)
+{
+    int ch, width, height;
     GLFWwindow* window;
+    struct nk_context* nk;
+    struct nk_font_atlas* atlas;
 
-    x1 = -1.0;
-    y1 = -0.0;
+    x1 = -0.5;
+    y1 = -0.5;
 
-    x2 = 1.0;
-    y2 = 0.3;
+    x2 = 0.5;
+    y2 = 0.5;
 
-    if (!glfwInit()) {
-        fprintf(stderr, "Error iniciando GLFW\n");
-        return -1;
+    if (x1 < -1.0)
+    {
+        float XDistancia = x1 - x2;
+        if (XDistancia < 0)
+        {
+            XDistancia = XDistancia * -1;
+        }
+
+        float YDistancia = y1 - x2;
+        if (YDistancia < 0)
+        {
+            YDistancia = YDistancia * -1;
+        }
+        
+        float Name ;
+        if (XDistancia > YDistancia) {
+            Name = XDistancia / YDistancia; 
+        } else {
+            Name = YDistancia / XDistancia;
+        }
     }
 
-    window = glfwCreateWindow(600, 600, "AAAA", NULL, NULL);
-    if (!window) {
-        fprintf(stderr,"Error creando la ventana GLFW\n");
+    glfwSetErrorCallback(error_callback);
+
+    if (!glfwInit())
+        exit(EXIT_FAILURE);
+
+    width = 640;
+    height = 480;
+
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
+    glfwWindowHint(GLFW_SCALE_TO_MONITOR, GLFW_TRUE);
+
+    window = glfwCreateWindow(width, height, "AAAAA", NULL, NULL);
+    if (!window)
+    {
         glfwTerminate();
-        return -1;
+        exit(EXIT_FAILURE);
     }
 
     glfwMakeContextCurrent(window);
     gladLoadGL(glfwGetProcAddress);
-    glfwSwapInterval(1);  
 
-    struct nk_context* nk = nk_glfw3_init(window, NK_GLFW3_INSTALL_CALLBACKS);
+    nk = nk_glfw3_init(window, NK_GLFW3_INSTALL_CALLBACKS);
+    nk_glfw3_font_stash_begin(&atlas);
+    nk_glfw3_font_stash_end();
 
-    while(!glfwWindowShouldClose(window)) {
+    glfwSetKeyCallback(window, key_callback);
+
+    while (!glfwWindowShouldClose(window))
+    {
+        glfwPollEvents();
         glClear(GL_COLOR_BUFFER_BIT);
         glFlush();
 
-        glfwPollEvents();
 
         nk_glfw3_new_frame();
 
-        if(nk_begin(nk, "hello, world!", nk_rect(50,50,200,200), NK_WINDOW_BORDER | NK_WINDOW_MOVABLE | NK_WINDOW_SCALABLE | NK_WINDOW_MINIMIZABLE | NK_WINDOW_TITLE)) {
-            nk_layout_row_dynamic(nk,30,1);
-            nk_label(nk,"hello world", NK_TEXT_CENTERED);
+        if (nk_begin(nk, "", nk_rect(50, 50, 200, 50), 0))
+        {
+            nk_layout_row_dynamic(nk, 30, 1);
+            nk_label(nk, "Hello World!!", NK_TEXT_CENTERED);
+            nk_label(nk, "SIUUU", NK_TEXT_CENTERED);
         }
-
         nk_end(nk);
 
-        nk_glfw3_render(NK_ANTI_ALIASING_ON);
-
-        // drawLine(x1, y1, x2, y2); // Llamar a la función para dibujar la línea
-        // drawPixel();
+        // drawLine(x1, y1, x2, y2); // Llamar a la función para dibujar la línea 
         // drawPixelLine(x1, y1, x2, y2);
 
+        nk_glfw3_render(NK_ANTI_ALIASING_ON);
         glfwSwapBuffers(window);
-        glfwPollEvents();
     }
 
     nk_glfw3_shutdown();
     glfwTerminate();
-    return 0;
+    exit(EXIT_SUCCESS);
 }
