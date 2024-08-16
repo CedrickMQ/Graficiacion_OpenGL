@@ -19,6 +19,8 @@
 #include <string.h>
 
 float x1, x2, y1, y2;
+int window_width = 400;
+int window_height = 400;
 
 void drawLine(float x1, float y1, float x2, float y2) {
     // Establecer el color de la línea (en este caso, rojo)
@@ -40,40 +42,61 @@ void drawPixelLine(float x1, float y1, float x2, float y2){
 
     float dy = (y2 - y1);
     float dx = (x2 - x1);
+    float AB_dx, AB_dy;
 
     float Dis = 0.001f;
 
-    if (dy >= 0)
-    {
-        YDiag = Dis;
+    if (dy <= 0) {
+        AB_dy = -dy;
     } else {
-        dy = -dy;
-        YDiag = -Dis;
+        AB_dy = dy;
     }
 
-    if (dx >= 0)
-    {
-        XDiag = Dis;
+    if (dx <= 0) {
+        AB_dx = -dx;
     } else {
-        dx = -dx;
-        XDiag = -Dis;
+        AB_dx = dx;
     }
 
-    if (dx >= dy)
-    {
-        YRecta = 0;
-        XRecta = XDiag;
+    if (AB_dx >= AB_dy) {
+        XDiag = (dx >= 0) ? 0.001f : -0.001f;
+        YDiag = (dy / dx) * XDiag;
     } else {
-        XRecta = 0;
-        YRecta = YDiag;
+        YDiag = (dy >= 0) ? 0.001f : -0.001f;
+        XDiag = (dx / dy) * YDiag;
     }
+
+    // if (dy >= 0)
+    // {
+    //     YDiag = Dis;
+    // } else {
+    //     // dy = -dy;
+    //     YDiag = -Dis;
+    // }
+
+    // if (dx >= 0)
+    // {
+    //     XDiag = Dis;
+    // } else {
+    //     // dx = -dx;
+    //     XDiag = -Dis;
+    // }
+
+    // if (dx >= dy)
+    // {
+    //     YRecta = 0;
+    //     XRecta = XDiag;
+    // } else {
+    //     XRecta = 0;
+    //     YRecta = YDiag;
+    // }
 
     float x = x1;
     float y = y1;
 
-    float avR = 2 * dy;
-    float av = avR - dx;
-    float avI = av - dx;
+    float avR = 2 * AB_dy;
+    float av = avR - AB_dx;
+    float avI = av - AB_dx;
 
     for(;((x <= x2) && (y <= y2));)
     {
@@ -85,8 +108,10 @@ void drawPixelLine(float x1, float y1, float x2, float y2){
             y = y + YDiag;
             av = av + avI;
         } else {
-            x = x + XRecta;
-            y = y + YRecta;
+            // x = x + XRecta;
+            // y = y + YRecta;
+            x += (dx >= 0) ? 0.001f : -0.001f;
+            y += (dy >= 0) ? 0.001f : -0.001f;
             av = av + avR;
         }
     }
@@ -113,6 +138,13 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
     }
 }
 
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+    glViewport(0, 0, width, height);
+    window_width = width;
+    window_height = height;
+}
+
 int main(int argc, char** argv)
 {
     int ch, width, height;
@@ -123,44 +155,38 @@ int main(int argc, char** argv)
     x1 = -0.5;
     y1 = -0.5;
 
-    x2 = 0;
-    y2 = 0;
+    x2 = 0.5;
+    y2 = 0.5;
 
-    if (x1 < -1.0)
-    {
-        float XDistancia = x1 - x2;
-        if (XDistancia < 0)
-        {
-            XDistancia = XDistancia * -1;
-        }
+    float M;
 
-        float YDistancia = y1 - x2;
-        if (YDistancia < 0)
-        {
-            YDistancia = YDistancia * -1;
-        }
-        
-        float Name ;
-        if (XDistancia > YDistancia) {
-            Name = XDistancia / YDistancia; 
-        } else {
-            Name = YDistancia / XDistancia;
-        }
-    }
+    float XDistancia = x2 - x1;
+    float YDistancia = y2 - y1;
+
+    M = YDistancia / XDistancia;
+
+    char m_string[50];
+    sprintf(m_string, "valor de M = %.2f", M);
 
     glfwSetErrorCallback(error_callback);
 
     if (!glfwInit())
         exit(EXIT_FAILURE);
 
-    width = 640;
-    height = 880;
+    // glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
+    // glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
+    // glfwWindowHint(GLFW_SCALE_TO_MONITOR, GLFW_TRUE);
 
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
-    glfwWindowHint(GLFW_SCALE_TO_MONITOR, GLFW_TRUE);
 
-    window = glfwCreateWindow(width, height, "AAAAA", NULL, NULL);
+    GLFWmonitor* monitor = glfwGetPrimaryMonitor();
+    const GLFWvidmode* mode = glfwGetVideoMode(monitor);
+
+    window_width = mode->width * 0.8; // Por ejemplo, el 80% del ancho del monitor
+    window_height = mode->height * 0.8;
+
+    window = glfwCreateWindow(window_width, window_height, "AAAAA", NULL, NULL);
     if (!window)
     {
         glfwTerminate();
@@ -170,11 +196,12 @@ int main(int argc, char** argv)
     glfwMakeContextCurrent(window);
     gladLoadGL(glfwGetProcAddress);
 
+    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    glfwSetKeyCallback(window, key_callback);
+
     nk = nk_glfw3_init(window, NK_GLFW3_INSTALL_CALLBACKS);
     nk_glfw3_font_stash_begin(&atlas);
-    nk_glfw3_font_stash_end();
-
-    glfwSetKeyCallback(window, key_callback);
+    nk_glfw3_font_stash_end();    
     
     char coord_string[50];
     
@@ -182,44 +209,45 @@ int main(int argc, char** argv)
     {
         glfwPollEvents();
         glClear(GL_COLOR_BUFFER_BIT);
+// No Mover esta mierda ===============
+        glMatrixMode(GL_PROJECTION);
+        glLoadIdentity();
+        glOrtho(-1.0 * (float)window_width / window_height, 1.0 * (float)window_width / window_height, -1.0, 1.0, -1.0, 1.0); // Configurar proyección ortográfica
+        glMatrixMode(GL_MODELVIEW);
+// ====================================
         glFlush();
+
+        // drawLine(x1, y1, x2, y2);
+        drawPixelLine(x1, y1, x2, y2);
 
         nk_glfw3_new_frame();
 
-        if (nk_begin(nk, "", nk_rect(0, 50, 200, 900), 0))
+        if (nk_begin(nk, "", nk_rect(0, 0, 200, 500), 0))
         {
             nk_layout_row_dynamic(nk, 30, 1);
+            nk_label(nk, m_string, NK_TEXT_CENTERED);
             nk_label(nk, "Cordenandas", NK_TEXT_CENTERED);
         }
 
-        float step = 0.01f; // Paso para incrementar x e y
+        float step = 0.01f; 
         float current_x = x1;
         float current_y = y1;
-        // Bucle para dibujar la línea y mostrar las coordenadas
+        
         while ((current_x <= x2) && (current_y <= y2))
-        {
-            // glVertex2f(current_x, current_y); // Dibuja el punto
-            char coord_string[50]; // Cadena para almacenar las coordenadas
+        { 
+            char coord_string[50];  
             sprintf(coord_string, "(%.2f, %.2f)", current_x, current_y);
             nk_label(nk, coord_string, NK_TEXT_CENTERED); 
             if ((x2 - current_x) >= (y2 - current_y)) {
-                // Si la distancia horizontal es mayor o igual que la vertical
                 current_x += (x2 >= current_x) ? step : -step;
                 current_y += (y2 >= current_y) ? (step * (y2 - y1) / (x2 - x1)) : -(step * (y2 - y1) / (x2 - x1));
             } else {
-                // Si la distancia vertical es mayor que la horizontal
                 current_y += (y2 >= current_y) ? step : -step;
                 current_x += (x2 >= current_x) ? (step * (x2 - x1) / (y2 - y1)) : -(step * (x2 - x1) / (y2 - y1));
             }
         } 
-
         nk_end(nk);
-
-        // glEnd();
-
-        //drawLine(x1, y1, x2, y2); // Llamar a la función para dibujar la línea 
-        drawPixelLine(x1, y1, x2, y2);
-
+ 
         nk_glfw3_render(NK_ANTI_ALIASING_ON);
         glfwSwapBuffers(window);
     }
